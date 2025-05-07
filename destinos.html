@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Destinos - MundoTravel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <header class="bg-blue-900 text-white py-4 text-center">
+    <h1 class="text-3xl font-bold">Destinos</h1>
+    <nav class="mt-2">
+      <ul class="flex justify-center gap-6">
+        <li><a href="index.html" class="hover:underline">Inicio</a></li>
+        <li><a href="destinos.html" class="hover:underline">Destinos</a></li>
+        <li><a href="nosotros.html" class="hover:underline">Nosotros</a></li>
+        <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
+        <li><a href="servicios.html" class="hover:underline">Servicios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="p-8">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- París -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden text-center">
+        <img src="img/vista-de-la-torre-eiffel.jpg" alt="París" class="w-full h-48 object-cover"/>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">París 🗼</h3>
+          <button onclick="cotizar('París')" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Cotizar</button>
+        </div>
+      </div>
+  
+      <!-- Machu Picchu -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden text-center">
+        <img src="img/machupichhu.jpg" alt="Machu Picchu" class="w-full h-48 object-cover"/>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Machu Picchu 🧭</h3>
+          <button onclick="cotizar('Machu Picchu')" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Cotizar</button>
+        </div>
+      </div>
+  
+      <!-- Tailandia -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden text-center">
+        <img src="img/tailandia.jpeg" alt="Tailandia" class="w-full h-48 object-cover"/>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Tailandia 🏖️</h3>
+          <button onclick="cotizar('Tailandia')" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Cotizar</button>
+        </div>
+      </div>
+  
+      <!-- Roma -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden text-center">
+        <img src="img/roma.jpg" alt="Roma" class="w-full h-48 object-cover"/>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Roma 🇮🇹</h3>
+          <button onclick="cotizar('Roma')" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Cotizar</button>
+        </div>
+      </div>
+  
+      <!-- Tokio -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden text-center">
+        <img src="img/tokio.jpg" alt="Tokio" class="w-full h-48 object-cover"/>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Tokio 🇯🇵</h3>
+          <button onclick="cotizar('Tokio')" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Cotizar</button>
+        </div>
+      </div>
+  
+      <!-- Nueva York -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden text-center">
+        <img src="img/newyork.jpg" alt="Nueva York" class="w-full h-48 object-cover"/>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Nueva York 🗽</h3>
+          <button onclick="cotizar('Nueva York')" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Cotizar</button>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Sección de cotización -->
+    <section id="cotizacion" class="mt-8 p-4 bg-blue-50 rounded-lg hidden">
+      <h2 class="text-xl font-semibold" id="cotizacion-titulo"></h2>
+      <p id="cotizacion-info"></p>
+      <p class="font-bold text-xl" id="cotizacion-precio"></p>
+      <button onclick="irServicios()" class="mt-4 bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">
+        Comprar
+      </button>
+    </section>
+  </main>
+  
+
+  <script>
+    function cotizar(destino) {
+      const info = {
+        destino: destino,
+        precio: obtenerPrecio(destino),
+        descripcion: obtenerDescripcion(destino)
+      };
+      localStorage.setItem("paqueteSeleccionado", JSON.stringify(info));
+      window.location.href = "servicios.html"; // redirige automáticamente
+    }
+  
+    function obtenerPrecio(destino) {
+      switch (destino) {
+        case "París": return "s/1.200";
+        case "Machu Picchu": return "s/300";
+        case "Tailandia": return "s/4.500 USD";
+        case "Roma": return "s/5.700 USD";
+        case "Tokio": return "s/10.100 USD";
+        case "Nueva York": return "s/7.500 USD";
+        default: return "$0 USD";
+      }
+    }
+  
+    function obtenerDescripcion(destino) {
+      switch (destino) {
+        case "París": return "Incluye vuelo redondo, hotel 4 estrellas y desayuno.";
+        case "Machu Picchu": return "Incluye tour guiado, transporte y alojamiento ecológico.";
+        case "Tailandia": return "Paquete todo incluido con playa, excursiones y comidas.";
+        case "Roma": return "Incluye tour guiado, transporte y alojamiento ecológico.";
+        case "Tokio": return "Paquete todo incluido con playa, excursiones y comidas.";
+        case "Nueva York": return "Incluye tour guiado, transporte y alojamiento ecológico.";
+
+        default: return "Información no disponible.";
+      }
+    }
+
+    
+  </script>
+  
+     <!-- Footer -->
+     <footer class="bg-blue-900 text-white mt-8">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div>
+            <h3 class="text-lg font-bold mb-2">MundoTravel</h3>
+            <p>Tu agencia de viajes de confianza. Hacemos tus sueños realidad.</p>
+          </div>
+    
+          <div>
+            <h3 class="text-lg font-bold mb-2">Enlaces Rápidos</h3>
+            <ul>
+              <li><a href="index.html" class="hover:underline">Inicio</a></li>
+              <li><a href="destinos.html" class="hover:underline">Destinos</a></li>
+              <li><a href="nosotros.html" class="hover:underline">Nosotros</a></li>
+              <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
+            </ul>
+          </div>
+    
+          <div>
+            <h3 class="text-lg font-bold mb-2">Contacto</h3>
+            <p>Email: contacto@mundotravel.com</p>
+            <p>Tel: +51 934 304 342</p>
+            <p>Dirección: Lima, Perú</p>
+          </div>
+        </div>
+    
+        <div class="bg-blue-800 text-center py-4 text-sm">
+          © 2025 MundoTravel. Todos los derechos reservados.
+        </div>
+      </footer>
+    
+    </body>
+    </html>

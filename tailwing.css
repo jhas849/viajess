@@ -1,0 +1,101 @@
+/* Importación de Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Personalización adicional si es necesario */
+@layer base {
+  /* Establecer un fondo por defecto y colores de texto */
+  body {
+    background-color: #f7f7f7;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Títulos de la página */
+  h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  /* Botones y formularios */
+  button {
+    background-color: #3b82f6; /* Azul de Tailwind */
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #2563eb; /* Azul más oscuro */
+  }
+
+  input, select, textarea {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Aseguramos que las imágenes sean responsivas */
+@layer components {
+  .responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+
+  .card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+}
+
+@layer utilities {
+  /* Utilidades personalizadas, si es necesario */
+  .hidden-xs {
+    display: none;
+  }
+
+  .visible-xs {
+    display: block;
+  }
+}
+
+/* Estilos para hacer la página accesible */
+@layer base {
+  /* Contraste adecuado */
+  .high-contrast {
+    background-color: #000;
+    color: #fff;
+  }
+}

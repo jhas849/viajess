@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MundoTravel - Inicio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-100">
+
+  <!-- Encabezado -->
+  <header class="bg-blue-900 text-white py-4 text-center z-10 relative">
+    <h1 class="text-3xl font-bold">MundoTravel</h1>
+    <nav class="mt-2">
+      <ul class="flex justify-center gap-6">
+        <li><a href="index.html" class="hover:underline">Inicio</a></li>
+        <li><a href="destinos.html" class="hover:underline">Destinos</a></li>
+        <li><a href="nosotros.html" class="hover:underline">Nosotros</a></li>
+        <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
+        <li><a href="servicios.html" class="hover:underline">Servicios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Video de fondo con mensaje principal -->
+  <main class="relative h-screen overflow-hidden">
+    <!-- 🎥 Video de fondo -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+      <source src="videos/publicidad.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+
+    <!-- Capa oscura y contenido -->
+    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-white text-center z-10 px-4">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Tu aventura empieza aquí</h2>
+      <p class="text-xl md:text-2xl">Explora el mundo con MundoTravel</p>
+    </div>
+  </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white mt-8">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div>
+            <h3 class="text-lg font-bold mb-2">MundoTravel</h3>
+            <p>Tu agencia de viajes de confianza. Hacemos tus sueños realidad.</p>
+          </div>
+    
+          <div>
+            <h3 class="text-lg font-bold mb-2">Enlaces Rápidos</h3>
+            <ul>
+              <li><a href="index.html" class="hover:underline">Inicio</a></li>
+              <li><a href="destinos.html" class="hover:underline">Destinos</a></li>
+              <li><a href="nosotros.html" class="hover:underline">Nosotros</a></li>
+              <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
+            </ul>
+          </div>
+    
+          <div>
+            <h3 class="text-lg font-bold mb-2">Contacto</h3>
+            <p>Email: contacto@mundotravel.com</p>
+            <p>Tel: +51 934 304 342</p>
+            <p>Dirección: Lima, Perú</p>
+          </div>
+        </div>
+    
+        <div class="bg-blue-800 text-center py-4 text-sm">
+          © 2025 MundoTravel. Todos los derechos reservados.
+        </div>
+      </footer>
+    
+    </body>
+    </html>
